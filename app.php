@@ -6,6 +6,6 @@ use Symfony\Component\Console\Application;
 
 $application = new Application('Demo');
 
-// ... register commands
+$application->add(new \App\SimpleLineCommand());
 
 $application->run(); 
