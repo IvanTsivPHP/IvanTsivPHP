@@ -3,6 +3,7 @@
 namespace App;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -15,12 +16,13 @@ class SimpleLineCommand extends Command
     {
         $this
             ->setName('line')
-            ->setDescription('Show given line');
+            ->setDescription('Show given line')
+            ->addArgument('line', InputArgument::REQUIRED, 'your line');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln($input);
+        $output->writeln($input->getArgument('line'));
         return Command::SUCCESS;
     }
 }
