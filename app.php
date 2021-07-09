@@ -7,5 +7,6 @@ use Symfony\Component\Console\Application;
 $application = new Application('Demo');
 
 $application->add(new \App\SimpleLineCommand());
+$application->add(new \App\XTimesStringCommand());
 
 $application->run(); 
